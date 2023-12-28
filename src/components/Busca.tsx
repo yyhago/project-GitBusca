@@ -1,5 +1,5 @@
 import { BsSearch } from "react-icons/bs";
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 
 import styled from "styled-components";
 import styleModule from "./Busca.module.css"
@@ -25,6 +25,12 @@ const ContainerBusca = styled.div`
 export default function Busca({ loadUser }: BuscaProps) {
   const [userName, setUserName] = useState("");
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if(e.key === "Enter"){
+      loadUser(userName)
+    }
+  }
+
   return (
     <ContainerBusca>
       <h2>Olá meu caro! Busque por um usuário.</h2>
@@ -34,6 +40,7 @@ export default function Busca({ loadUser }: BuscaProps) {
           type="text"
           placeholder="Nome do usuário..."
           onChange={(e) => setUserName(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <button onClick={() => loadUser(userName)}>
           <BsSearch />
