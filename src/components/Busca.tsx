@@ -1,28 +1,44 @@
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
 
+import styled from "styled-components";
+import styleModule from "./Busca.module.css"
+
 type BuscaProps = {
   loadUser: (userName: string) => Promise<void>;
 };
 
-export default function Busca({ loadUser }: BuscaProps) {
+const ContainerBusca = styled.div`
+  background-color: #474371; 
+  border-radius: 2rem;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+`;
 
-    const [userName, setUserName] = useState("")
+export default function Busca({ loadUser }: BuscaProps) {
+  const [userName, setUserName] = useState("");
 
   return (
-    <div>
+    <ContainerBusca>
       <h2>Olá meu caro! Busque por um usuário.</h2>
       <p>E conheça os melhores repositórios do GitHub</p>
-      <div>
+      <div className={styleModule.buscaContainer}>
         <input
           type="text"
-          placeholder="Digite o nome do usuário"
+          placeholder="Nome do usuário..."
           onChange={(e) => setUserName(e.target.value)}
         />
         <button onClick={() => loadUser(userName)}>
           <BsSearch />
         </button>
       </div>
-    </div>
+    </ContainerBusca>
   );
 }

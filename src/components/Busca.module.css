@@ -1,0 +1,18 @@
+.buscaContainer{
+    display: flex;
+    gap: .5rem;
+}
+
+
+.buscaContainer input,
+.buscaContainer button{
+    padding: .7rem;
+    border-radius: 3px;
+    border: none;
+    color: #2b3566;
+}
+
+.buscaContainer button{
+    background-color: #0e1129;
+    cursor: pointer;
+}
