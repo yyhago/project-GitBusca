@@ -1,0 +1,55 @@
+.user{
+    background-color: #474371;
+    padding: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.user img{
+    width: 240px;
+    height: 240px;
+    border: 4px solid #5c5897;
+    border-radius: 50%;
+}
+
+.status{
+    display: flex;
+
+}
+
+.status div{
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.status div:first-child{
+    border-right: 1px solid #ffffff;
+}
+
+.locacao{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.locacao svg{
+    fill: #ffffff;
+    font-size: 1.5rem;
+}
+
+.locacao span{
+   color: #ffffff;
+   font-weight: bold;
+}
+
+.user a{
+    text-align: center;
+    background-color: #7670ce;
+    border-radius: 2rem;
+    padding: 1rem;
+}

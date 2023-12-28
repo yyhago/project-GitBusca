@@ -3,26 +3,30 @@ import {MdLocationPin} from "react-icons/md"
 
 import { Link } from "react-router-dom";
 
+import classCss from "./User.module.css"
+
 export default function User({avatar_url, login, location, followers, following}: UserProps) {
   return (
-    <div>
+    <div className={classCss.user}>
         <img src={avatar_url} alt={login}/>
         <h2>{login}</h2>
-        <p>
+        {location && (
+        <p className={classCss.locacao}>
             <MdLocationPin/>
             <span>{location}</span>
         </p>
-        <div>
+        )}
+        <div className={classCss.status}>
             <div>
                 <p>Seguidores:</p>
-                <p>{followers}</p>
+                <p className={classCss.number}>{followers}</p>
             </div>
             <div>
                 <p>Seguindo:</p>
-                <p>{following}</p>
+                <p className={classCss.number}>{following}</p>
             </div>
-            <Link to={`/repos/${login}`}>Ver Repositório!</Link>
         </div>
+        <Link to={`/repos/${login}`}>Ver Repositório!</Link>
     </div>
   )
 }

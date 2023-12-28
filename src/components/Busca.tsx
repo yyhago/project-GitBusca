@@ -13,7 +13,7 @@ const ContainerBusca = styled.div`
   border-radius: 2rem;
   margin: 0 auto;
   padding: 2rem;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
